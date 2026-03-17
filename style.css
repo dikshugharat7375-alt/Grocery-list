@@ -1,0 +1,443 @@
+/* =============================================
+   FRESH CART — STYLESHEET
+   Organized into sections for easy reading:
+   1. CSS Variables (colours & fonts)
+   2. Reset & Base
+   3. Header
+   4. Layout
+   5. Browse Section (categories & cards)
+   6. Grocery List Panel
+   7. Animations
+   8. Responsive (mobile-friendly)
+============================================= */
+
+
+/* ── 1. CSS VARIABLES ─────────────────────── */
+:root {
+  /* Colour palette */
+  --green:        #2e7d32;   /* dark green — main accent */
+  --green-light:  #e8f5e9;   /* very pale green — backgrounds */
+  --green-mid:    #4caf50;   /* mid green — hover states */
+  --orange:       #f57c00;   /* orange — "Add to List" button */
+  --orange-light: #fff3e0;
+  --red:          #d32f2f;   /* red — remove button */
+  --red-light:    #ffebee;
+  --gray-light:   #f9f9f9;
+  --gray-border:  #e0e0e0;
+  --gray-text:    #757575;
+  --text-dark:    #212121;
+  --white:        #ffffff;
+
+  /* Typography */
+  --font: 'Nunito', sans-serif;
+
+  /* Spacing */
+  --card-radius: 14px;
+  --gap: 16px;
+}
+
+
+/* ── 2. RESET & BASE ──────────────────────── */
+
+/* Remove default spacing and make box-sizing predictable */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background-color: #f0f4f0;  /* soft greenish-white page background */
+  color: var(--text-dark);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Remove default list bullet points */
+ul {
+  list-style: none;
+}
+
+
+/* ── 3. HEADER ────────────────────────────── */
+
+.site-header {
+  background: var(--green);
+  color: var(--white);
+  padding: 18px 24px;
+  /* Subtle shadow to separate header from content */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky;    /* stays at top when scrolling */
+  top: 0;
+  z-index: 100;        /* keeps it above other content */
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-icon {
+  font-size: 2rem;
+}
+
+.site-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.site-subtitle {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+
+/* ── 4. LAYOUT ────────────────────────────── */
+
+.main-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: grid;
+  /* Left column: browse area | Right column: sticky list panel */
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  align-items: start;  /* top-align both columns */
+}
+
+
+/* ── 5. BROWSE SECTION ────────────────────── */
+
+/* Each category block (Fruits, Vegetables, etc.) */
+.category-block {
+  margin-bottom: 28px;
+}
+
+.category-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--green);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Decorative left bar */
+  border-left: 4px solid var(--green);
+  padding-left: 10px;
+}
+
+.category-emoji {
+  font-size: 1.3rem;
+}
+
+/* Grid of item cards inside each category */
+.items-grid {
+  display: grid;
+  /* Auto-fill columns: each at least 140px wide */
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--gap);
+}
+
+/* Individual item card */
+.item-card {
+  background: var(--white);
+  border-radius: var(--card-radius);
+  border: 1.5px solid var(--gray-border);
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;  /* stack image, name, qty, button vertically */
+  align-items: center;
+  gap: 8px;
+  /* Smooth hover lift effect */
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* Item image */
+.item-img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;    /* crop to fill the space neatly */
+  border-radius: 8px;
+}
+
+/* Item name text */
+.item-name {
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-align: center;
+  color: var(--text-dark);
+}
+
+/* Quantity control row */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--gray-light);
+  border-radius: 99px;   /* fully rounded pill shape */
+  padding: 3px 6px;
+}
+
+/* The minus / plus buttons */
+.qty-btn {
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--green);
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Transition for smooth colour change on hover */
+  transition: background 0.15s;
+  line-height: 1;
+}
+
+.qty-btn:hover {
+  background: var(--green-light);
+}
+
+/* The number input in the middle */
+.qty-input {
+  width: 34px;
+  text-align: center;
+  border: none;
+  background: transparent;
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  /* Hide the browser's default spinner arrows */
+  appearance: textfield;
+}
+.qty-input::-webkit-inner-spin-button,
+.qty-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* "Add to List" button */
+.add-btn {
+  width: 100%;
+  padding: 7px 0;
+  border: none;
+  border-radius: 8px;
+  background: var(--orange);
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.add-btn:hover {
+  background: #ef6c00;   /* slightly darker orange */
+}
+
+.add-btn:active {
+  transform: scale(0.97);  /* tiny click animation */
+}
+
+
+/* ── 6. GROCERY LIST PANEL ────────────────── */
+
+/* The sticky right panel */
+.list-panel {
+  background: var(--white);
+  border-radius: var(--card-radius);
+  border: 1.5px solid var(--gray-border);
+  padding: 18px 16px;
+  /* Sticks to top of viewport so it stays visible while scrolling */
+  position: sticky;
+  top: 80px;
+  /* Max height + scroll if list gets long */
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 2px dashed var(--gray-border);
+}
+
+.list-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--green);
+}
+
+/* Small badge showing item count */
+.list-count {
+  background: var(--green-light);
+  color: var(--green);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+/* Message shown when list is empty */
+.empty-msg {
+  text-align: center;
+  color: var(--gray-text);
+  font-size: 0.9rem;
+  padding: 24px 0;
+  line-height: 1.8;
+}
+
+.empty-msg span {
+  font-size: 0.82rem;
+  opacity: 0.75;
+}
+
+/* Each added item in the list */
+.grocery-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gray-border);
+  font-size: 0.92rem;
+  /* Slide-in animation when added */
+  animation: slideIn 0.25s ease;
+}
+
+/* Emoji icon on each list item */
+.list-item-emoji {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Item name + quantity text */
+.list-item-text {
+  flex: 1;   /* takes up all remaining space */
+  font-weight: 600;
+}
+
+.list-item-qty {
+  font-size: 0.8rem;
+  color: var(--gray-text);
+  font-weight: 400;
+}
+
+/* When checkbox is checked — text gets crossed out */
+.bought .list-item-text {
+  text-decoration: line-through;
+  color: var(--gray-text);
+  opacity: 0.7;
+}
+
+/* Custom styled checkbox */
+input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--green);   /* makes the tick green */
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Remove button (×) */
+.remove-btn {
+  background: var(--red-light);
+  color: var(--red);
+  border: none;
+  border-radius: 6px;
+  width: 26px;
+  height: 26px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.remove-btn:hover {
+  background: #ffcdd2;
+}
+
+/* Clear all button at the bottom of the list */
+.clear-btn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 9px 0;
+  border: 1.5px solid var(--red);
+  border-radius: 8px;
+  background: var(--red-light);
+  color: var(--red);
+  font-family: var(--font);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.clear-btn:hover {
+  background: #ffcdd2;
+}
+
+
+/* ── 7. ANIMATIONS ────────────────────────── */
+
+/* Slide in from above when a new item is added */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ── 8. RESPONSIVE ────────────────────────── */
+
+/* On screens narrower than 768px (tablets, phones) */
+@media (max-width: 768px) {
+
+  /* Stack browse and list panel vertically */
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* List panel no longer needs to be sticky on mobile */
+  .list-panel {
+    position: static;
+    max-height: none;
+  }
+
+  /* Show list panel above the browse section on mobile */
+  .list-panel {
+    order: -1;
+  }
+}
+
+/* On very small screens */
+@media (max-width: 400px) {
+  .items-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

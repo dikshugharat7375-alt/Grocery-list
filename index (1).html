@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fresh Cart — My Grocery List</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <span class="header-icon">🛒</span>
+      <div>
+        <h1 class="site-title">Fresh Cart</h1>
+        <p class="site-subtitle">Pick items, build your list, shop smart</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-layout">
+    <section class="browse-section" aria-label="Browse groceries">
+
+
+      <!-- ══════════════════════════════
+           FRUITS
+      ══════════════════════════════════ -->
+      <div class="category-block">
+        <h2 class="category-title"><span class="category-emoji">🍎</span> Fruits</h2>
+        <div class="items-grid">
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=160&h=120&fit=crop&auto=format" alt="Apple" class="item-img" />
+            <p class="item-name">Apple</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Apple','🍎')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=160&h=120&fit=crop&auto=format" alt="Banana" class="item-img" />
+            <p class="item-name">Banana</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Banana','🍌')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?w=160&h=120&fit=crop&auto=format" alt="Mango" class="item-img" />
+            <p class="item-name">Mango</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Mango','🥭')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1423483641154-5411ec9c0ddf?w=160&h=120&fit=crop&auto=format" alt="Grapes" class="item-img" />
+            <p class="item-name">Grapes</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Grapes','🍇')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="strawberries.png" alt="Strawberry" class="item-img" />
+            <p class="item-name">Strawberry</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Strawberry','🍓')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="watermelon.jpg" alt="Watermelon" class="item-img" />
+            <p class="item-name">Watermelon</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Watermelon','🍉')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="Tangerine-SpotlessFruitsIndia_1024x1024.webp" alt="Orange" class="item-img" />
+            <p class="item-name">Orange</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Orange','🍊')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=160&h=120&fit=crop&auto=format" alt="Pineapple" class="item-img" />
+            <p class="item-name">Pineapple</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Pineapple','🍍')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="Kiwi-fruit.webp" alt="Kiwi" class="item-img" />
+            <p class="item-name">Kiwi</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Kiwi','🥝')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="lemon-500x500.webp" alt="Lemon" class="item-img" />
+            <p class="item-name">Lemon</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Lemon','🍋')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=160&h=120&fit=crop&auto=format" alt="Blueberry" class="item-img" />
+            <p class="item-name">Blueberry</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Blueberry','🫐')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1541344999736-83eca272f6fc?w=160&h=120&fit=crop&auto=format" alt="Pomegranate" class="item-img" />
+            <p class="item-name">Pomegranate</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Pomegranate','❤️')">Add to List</button>
+          </div>
+
+        </div>
+      </div><!-- end Fruits -->
+
+
+      <!-- ══════════════════════════════
+           VEGETABLES
+      ══════════════════════════════════ -->
+      <div class="category-block">
+        <h2 class="category-title"><span class="category-emoji">🥦</span> Vegetables</h2>
+        <div class="items-grid">
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=160&h=120&fit=crop&auto=format" alt="Carrot" class="item-img" />
+            <p class="item-name">Carrot</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Carrot','🥕')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?w=160&h=120&fit=crop&auto=format" alt="Broccoli" class="item-img" />
+            <p class="item-name">Broccoli</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Broccoli','🥦')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1592841200221-a6898f307baa?w=160&h=120&fit=crop&auto=format" alt="Tomato" class="item-img" />
+            <p class="item-name">Tomato</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Tomato','🍅')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=160&h=120&fit=crop&auto=format" alt="Spinach" class="item-img" />
+            <p class="item-name">Spinach</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Spinach','🌿')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=160&h=120&fit=crop&auto=format" alt="Potato" class="item-img" />
+            <p class="item-name">Potato</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Potato','🥔')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1508747703725-719777637510?w=160&h=120&fit=crop&auto=format" alt="Onion" class="item-img" />
+            <p class="item-name">Onion</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Onion','🧅')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="garlic.webp" alt="Garlic" class="item-img" />
+            <p class="item-name">Garlic</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Garlic','🧄')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=160&h=120&fit=crop&auto=format" alt="Bell Pepper" class="item-img" />
+            <p class="item-name">Bell Pepper</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Bell Pepper','🫑')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1604977042946-1eecc30f269e?w=160&h=120&fit=crop&auto=format" alt="Cucumber" class="item-img" />
+            <p class="item-name">Cucumber</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Cucumber','🥒')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="71XMKwfQCzL._AC_UF894,1000_QL80_.jpg" alt="Mushroom" class="item-img" />
+            <p class="item-name">Mushroom</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Mushroom','🍄')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=160&h=120&fit=crop&auto=format" alt="Cauliflower" class="item-img" />
+            <p class="item-name">Cauliflower</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Cauliflower','🥬')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=160&h=120&fit=crop&auto=format" alt="Corn" class="item-img" />
+            <p class="item-name">Corn</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Corn','🌽')">Add to List</button>
+          </div>
+
+        </div>
+      </div><!-- end Vegetables -->
+
+
+      <!-- ══════════════════════════════
+           DAIRY
+      ══════════════════════════════════ -->
+      <div class="category-block">
+        <h2 class="category-title"><span class="category-emoji">🥛</span> Dairy</h2>
+        <div class="items-grid">
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?w=160&h=120&fit=crop&auto=format" alt="Milk" class="item-img" />
+            <p class="item-name">Milk</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Milk','🥛')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1618164436241-4473940d1f5c?w=160&h=120&fit=crop&auto=format" alt="Cheddar Cheese" class="item-img" />
+            <p class="item-name">Cheddar Cheese</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Cheddar Cheese','🧀')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1571212515416-fef01fc43637?w=160&h=120&fit=crop&auto=format" alt="Yogurt" class="item-img" />
+            <p class="item-name">Yogurt</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Yogurt','🫙')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=160&h=120&fit=crop&auto=format" alt="Butter" class="item-img" />
+            <p class="item-name">Butter</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Butter','🧈')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=160&h=120&fit=crop&auto=format" alt="Eggs" class="item-img" />
+            <p class="item-name">Eggs</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Eggs','🥚')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="mozzarella-cheese.webp" alt="Mozzarella" class="item-img" />
+            <p class="item-name">Mozzarella</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Mozzarella','🧀')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1576506295286-5cda18df43e7?w=160&h=120&fit=crop&auto=format" alt="Ice Cream" class="item-img" />
+            <p class="item-name">Ice Cream</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Ice Cream','🍦')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="paneer.webp" alt="Paneer" class="item-img" />
+            <p class="item-name">Paneer</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Paneer','🧀')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="heavy cream.webp" alt="Heavy Cream" class="item-img" />
+            <p class="item-name">Heavy Cream</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Heavy Cream','🍶')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="wipped_cream.jpg" alt="Whipped Cream" class="item-img" />
+            <p class="item-name">Whipped Cream</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Whipped Cream','🍦')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=160&h=120&fit=crop&auto=format" alt="Greek Yogurt" class="item-img" />
+            <p class="item-name">Greek Yogurt</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Greek Yogurt','🥣')">Add to List</button>
+          </div>
+
+        </div>
+      </div><!-- end Dairy -->
+
+
+      <!-- ══════════════════════════════
+           SNACKS
+      ══════════════════════════════════ -->
+      <div class="category-block">
+        <h2 class="category-title"><span class="category-emoji">🍿</span> Snacks</h2>
+        <div class="items-grid">
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=160&h=120&fit=crop&auto=format" alt="Potato Chips" class="item-img" />
+            <p class="item-name">Potato Chips</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Potato Chips','🥔')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1578849278619-e73505e9610f?w=160&h=120&fit=crop&auto=format" alt="Popcorn" class="item-img" />
+            <p class="item-name">Popcorn</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Popcorn','🍿')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=160&h=120&fit=crop&auto=format" alt="Cookies" class="item-img" />
+            <p class="item-name">Cookies</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Cookies','🍪')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="mixed_nuts.jpg" alt="Mixed Nuts" class="item-img" />
+            <p class="item-name">Mixed Nuts</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Mixed Nuts','🥜')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="chocolate_bar.webp" alt="Chocolate Bar" class="item-img" />
+            <p class="item-name">Chocolate Bar</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Chocolate Bar','🍫')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=160&h=120&fit=crop&auto=format" alt="Crackers" class="item-img" />
+            <p class="item-name">Crackers</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Crackers','🍘')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="pretzel.jpg" alt="Pretzels" class="item-img" />
+            <p class="item-name">Pretzels</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Pretzels','🥨')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="peanut_butter.jpg" alt="Peanut Butter" class="item-img" />
+            <p class="item-name">Peanut Butter</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Peanut Butter','🥜')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=160&h=120&fit=crop&auto=format" alt="Granola Bar" class="item-img" />
+            <p class="item-name">Granola Bar</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Granola Bar','🌾')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="candy.jpg" alt="Candy" class="item-img" />
+            <p class="item-name">Candy</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Candy','🍬')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="mochi.jpg" alt="Rice Cakes" class="item-img" />
+            <p class="item-name">Rice Cakes</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Rice Cakes','🍙')">Add to List</button>
+          </div>
+
+        </div>
+      </div><!-- end Snacks -->
+
+
+      <!-- ══════════════════════════════
+           BEVERAGES
+      ══════════════════════════════════ -->
+      <div class="category-block">
+        <h2 class="category-title"><span class="category-emoji">🧃</span> Beverages</h2>
+        <div class="items-grid">
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=160&h=120&fit=crop&auto=format" alt="Orange Juice" class="item-img" />
+            <p class="item-name">Orange Juice</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Orange Juice','🍊')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=160&h=120&fit=crop&auto=format" alt="Coffee" class="item-img" />
+            <p class="item-name">Coffee</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Coffee','☕')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=160&h=120&fit=crop&auto=format" alt="Green Tea" class="item-img" />
+            <p class="item-name">Green Tea</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Green Tea','🍵')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=160&h=120&fit=crop&auto=format" alt="Mineral Water" class="item-img" />
+            <p class="item-name">Mineral Water</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Mineral Water','💧')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1567103472667-6898f3a79cf2?w=160&h=120&fit=crop&auto=format" alt="Cola" class="item-img" />
+            <p class="item-name">Cola</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Cola','🥤')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=160&h=120&fit=crop&auto=format" alt="Lemonade" class="item-img" />
+            <p class="item-name">Lemonade</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Lemonade','🍋')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="mango_juice.jpg" alt="Mango Juice" class="item-img" />
+            <p class="item-name">Mango Juice</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Mango Juice','🥭')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=160&h=120&fit=crop&auto=format" alt="Red Wine" class="item-img" />
+            <p class="item-name">Red Wine</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Red Wine','🍷')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="coconut_water.jpg" alt="Coconut Water" class="item-img" />
+            <p class="item-name">Coconut Water</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Coconut Water','🥥')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="hot_chocolate.jpg" alt="Hot Chocolate" class="item-img" />
+            <p class="item-name">Hot Chocolate</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Hot Chocolate','🍫')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=160&h=120&fit=crop&auto=format" alt="Milkshake" class="item-img" />
+            <p class="item-name">Milkshake</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Milkshake','🥤')">Add to List</button>
+          </div>
+
+          <div class="item-card">
+            <img src="red_bull.jpg" alt="Energy Drink" class="item-img" />
+            <p class="item-name">Energy Drink</p>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="qty-input" type="number" value="1" min="1" max="99" />
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+            <button class="add-btn" onclick="addToList(this,'Energy Drink','⚡')">Add to List</button>
+          </div>
+
+        </div>
+      </div><!-- end Beverages -->
+
+
+    </section><!-- end .browse-section -->
+
+
+    <!-- ===== RIGHT: MY GROCERY LIST ===== -->
+    <aside class="list-panel" aria-label="My grocery list">
+      <div class="list-header">
+        <h2 class="list-title">🛒 My Grocery List</h2>
+        <span class="list-count" id="listCount">0 items</span>
+      </div>
+      <p class="empty-msg" id="emptyMsg">
+        Nothing here yet!<br />
+        <span>Add items from the left to get started.</span>
+      </p>
+      <ul class="grocery-list" id="groceryList"></ul>
+      <button class="clear-btn" id="clearBtn" onclick="clearAll()" style="display:none">
+        🗑️ Clear All
+      </button>
+    </aside>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
